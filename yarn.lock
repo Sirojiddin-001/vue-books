@@ -8377,6 +8377,11 @@ uglify-js@3.4.x:
     commander "~2.19.0"
     source-map "~0.6.1"
 
+uikit@^3.9.4:
+  version "3.9.4"
+  resolved "https://registry.yarnpkg.com/uikit/-/uikit-3.9.4.tgz#2565a5c0239f49d3a75bfa89c519d40c006e3c46"
+  integrity sha512-mrOr/k3a/6/VBXgnqmQFg0l2ipZyoTpULZZgJ0RVHZz97HNrc28KQsb24pl8wxtw+BGpD39nfMhSmOznyOZuHw==
+
 unbox-primitive@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npm.taobao.org/unbox-primitive/download/unbox-primitive-1.0.1.tgz?cache=0&sync_timestamp=1616706278290&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Funbox-primitive%2Fdownload%2Funbox-primitive-1.0.1.tgz#085e215625ec3162574dc8859abee78a59b14471"
@@ -8626,10 +8631,20 @@ vue-eslint-parser@^7.0.0:
     lodash "^4.17.21"
     semver "^6.3.0"
 
+vue-fragment@^1.5.2:
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/vue-fragment/-/vue-fragment-1.5.2.tgz#310017170c564c4aad95da14c185c92c6784fd3c"
+  integrity sha512-KEW0gkeNOLJjtXN4jqJhTazez5jtrwimHkE5Few/VxblH4F9EcvJiEsahrV5kg5uKd5U8du4ORKS6QjGE0piYA==
+
 vue-hot-reload-api@^2.3.0:
   version "2.3.4"
   resolved "https://registry.nlark.com/vue-hot-reload-api/download/vue-hot-reload-api-2.3.4.tgz#532955cc1eb208a3d990b3a9f9a70574657e08f2"
   integrity sha1-UylVzB6yCKPZkLOp+acFdGV+CPI=
+
+vue-i18n@^8.26.7:
+  version "8.26.7"
+  resolved "https://registry.yarnpkg.com/vue-i18n/-/vue-i18n-8.26.7.tgz#adfd48373449fe31438c48e3b3bd43044dc3a681"
+  integrity sha512-7apa5PvRg1YCLoraE3lOgpCG8hJGupLCtywQWedWsgBbvF0TOgFvhitqK9xRH0PBGG1G8aiJz9oklyNDFfDxLg==
 
 "vue-loader-v16@npm:vue-loader@^16.1.0":
   version "16.8.3"
@@ -8650,6 +8665,11 @@ vue-loader@^15.9.2:
     loader-utils "^1.1.0"
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
+
+vue-responsive@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/vue-responsive/-/vue-responsive-1.1.0.tgz#7d5c82038feb8399076f90e9a20ac98473f7ec78"
+  integrity sha512-gZR7PihB6ExohvyrIFwJcJDG3qvbdrdMB6aZAm14jWNIUxUacN6ZQLbQbmQduW+tlR3vVHAPdvwFvU57D1my4g==
 
 vue-router@^3.2.0:
   version "3.5.3"
@@ -8676,6 +8696,13 @@ vue-template-es2015-compiler@^1.9.0:
   version "1.9.1"
   resolved "https://registry.nlark.com/vue-template-es2015-compiler/download/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha1-HuO8mhbsv1EYvjNLsV+cRvgvWCU=
+
+vue-window-size@0.6.2:
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/vue-window-size/-/vue-window-size-0.6.2.tgz#02522e2c0d8a95f242e0249b6d72a47848bc4e01"
+  integrity sha512-/mODjnC5xdZb0T0UlnUzYgOgxeaUVCEuBZkiD4jss2LkByA+208SA+MhMKvZFcMvej484+7mDjr2q9TNIRj+Dw==
+  dependencies:
+    window-resize-subject "^1.4.2"
 
 vue@^2.6.11:
   version "2.6.14"
@@ -8898,6 +8925,11 @@ wide-align@^1.1.0:
   integrity sha1-3x1MIGhUNp7PPJpImPGyP72dFdM=
   dependencies:
     string-width "^1.0.2 || 2 || 3 || 4"
+
+window-resize-subject@^1.4.2:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/window-resize-subject/-/window-resize-subject-1.5.0.tgz#a866128119c3899a8c03cfd1b86decf883e595a4"
+  integrity sha512-r+zXdtumr1+De51Lb3P561K+3t6PvEVXq+dTaEhikNY8Hj0UuzkYL3v9jo5TLpPaL7s9gkaX3Sb643HqYT7uSA==
 
 word-wrap@~1.2.3:
   version "1.2.3"
