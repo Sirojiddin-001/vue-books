@@ -1,16 +1,43 @@
 <template>
   <nav class="bg-white uk-box-shadow-medium" uk-navbar="mode: click" uk-sticky>
     <div class="container mx-auto flex">
-      <div class="uk-navbar-left">
-        <a class="uk-navbar-item logo" href="#">Logo</a>
+      <div class="nav-overlay uk-navbar-left">
+        <div
+          v-if="windowWidth < 1024"
+          class="menu-btn ml-3"
+          tabindex="0"
+          uk-toggle="target: #vertical-menu"
+        >
+          <span class="far fa-bars"></span>
+        </div>
+
+        <router-link v-if="windowWidth >= 768" class="uk-navbar-item logo" to="/">Logo</router-link>
       </div>
 
-      <div class="uk-navbar-right">
+      <div v-if="windowWidth < 768" class="nav-overlay uk-navbar-right">
+        <router-link class="uk-navbar-item logo" to="/">Logo</router-link>
+      </div>
+
+      <div class="nav-overlay uk-navbar-right">
         <Search />
-        <Language/>
-        <div class="v-divider mr-3"></div>
-        <button class="uk-button book-primary-btn-o mr-3">Войти</button>
-        <button class="uk-button book-primary-btn mr-3">Зарегистрироваться</button>
+        <Language />
+        <div v-if="windowWidth >= 768" class="v-divider mr-3" />
+        <Profile v-if="isAuth" />
+        <AuthButtons v-else />
+      </div>
+
+      <div class="nav-overlay uk-navbar-left uk-flex-1" hidden>
+        <div class="uk-navbar-item uk-width-expand">
+          <form class="uk-search uk-search-navbar uk-width-1-1">
+            <input class="uk-search-input" type="search" :placeholder="$t('search')" autofocus />
+          </form>
+        </div>
+        <a
+          class="uk-navbar-toggle"
+          data-uk-close
+          uk-toggle="target: .nav-overlay; animation: uk-animation-fade"
+          href="#close"
+        />
       </div>
     </div>
   </nav>
@@ -18,12 +45,22 @@
 
 <script>
 import Search from "./Search.vue";
-import Language from './Language.vue';
+import Language from "./Language.vue";
+import AuthButtons from "./AuthButtons.vue";
+import Profile from "./Profile.vue";
 
 export default {
   components: {
     Search,
-    Language
+    Language,
+    AuthButtons,
+    Profile
+  },
+
+  data() {
+    return {
+      isAuth: false
+    };
   }
 };
 </script>

@@ -344,6 +344,30 @@ html {
   }
 }
 
+@media (max-width: 576px) {
+  .search-btn {
+    color: $blue !important;
+    padding: 0;
+    line-height: normal;
+    border: none;
+    &:hover {
+      color: darken($blue, 10%) !important;
+    }
+    &:focus {
+      box-shadow: none !important;
+    }
+  }
+
+  .menu-btn {
+    padding: 0;
+    line-height: normal;
+    border: none;
+    &:focus-within {
+      box-shadow: none !important;
+    }
+  }
+}
+
 .search-btn-m {
   color: $blue !important;
   transition: 0.25s ease-in-out;

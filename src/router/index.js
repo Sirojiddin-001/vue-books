@@ -11,6 +11,14 @@ const routes = [
     component: Home
   },
   {
+    path: '/login',
+    name: 'Login',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Login.vue'),
+    meta:{
+      layout: "auth"
+    }
+  },
+  {
     path: '/book-category/:id',
     name: 'BookCategory',
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')

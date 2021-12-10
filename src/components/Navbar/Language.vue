@@ -1,5 +1,5 @@
 <template>
-  <div class="mr-3">
+  <div v-if="windowWidth >= 768" class="mr-3">
     <span class="language" tabindex="0">
       <img :src="require(`@/assets/img/${$i18n.locale}.svg`)" />
     </span>
