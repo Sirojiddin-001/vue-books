@@ -1,34 +1,58 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
+import Home from "../views/Home.vue";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: "/",
+    name: "Home",
+    component: Home,
   },
   {
-    path: '/login',
-    name: 'Login',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Login.vue'),
-    meta:{
-      layout: "auth"
-    }
+    path: "/login",
+    name: "Login",
+    component: () => import("../views/Login.vue"),
+    meta: {
+      layout: "auth",
+    },
   },
   {
-    path: '/book-category/:id',
-    name: 'BookCategory',
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
-]
+    path: "/register",
+    name: "Register",
+    component: () => import("../views/Register.vue"),
+    meta: {
+      layout: "auth",
+    },
+  },
+  {
+    path: "/forgot-password",
+    name: "Forgot",
+    component: () => import("../views/Forgot.vue"),
+    meta: {
+      layout: "auth",
+    },
+  },
+  {
+    path: "/book/:id",
+    name: "BookDetails",
+    component: () => import("../views/BookDetails.vue"),
+  },
+  {
+    path: "/book-category/:id",
+    name: "BookCategory",
+    component: () => import("../views/BookCategory.vue"),
+  },
+];
 
 const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes
-})
+  mode: "history",
+  base: process.env.BASE_URL || "/",
+  scrollBehavior() {
+    return window.scrollTo({ top: 0, behavior: "smooth" });
+  },
+  routes,
+});
 
-export default router
+export default router;

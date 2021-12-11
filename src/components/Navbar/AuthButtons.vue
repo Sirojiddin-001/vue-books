@@ -1,8 +1,8 @@
 <template>
-  <fragment v-if="windowWidth >= 768">
-    <button class="uk-button book-primary-btn-o mr-3">Войти</button>
-    <button class="uk-button book-primary-btn mr-3">Зарегистрироваться</button>
-  </fragment>
+  <div v-if="windowWidth >= 768">
+    <router-link to="/login" class="uk-button book-primary-btn-o mr-3">{{$t("sign_in")}}</router-link>
+    <router-link to="/register" class="uk-button book-primary-btn mr-3">{{$t("sign_up")}}</router-link>
+  </div>
 </template>
 
 <script>

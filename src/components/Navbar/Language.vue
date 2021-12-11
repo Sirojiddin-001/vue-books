@@ -8,7 +8,7 @@
       uk-dropdown="mode: click; boundary: .language"
     >
       <ul class="uk-nav uk-dropdown-nav language-select">
-        <li class="uk-nav-header text-center font-semibold normal-case">Change language</li>
+        <li class="uk-nav-header text-center font-semibold normal-case">{{$t("choose_language")}}</li>
         <li class="uk-nav-divider"></li>
         <li
           :key="language.path"

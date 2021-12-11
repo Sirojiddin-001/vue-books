@@ -104,7 +104,7 @@ $input-group-addon-bg: lighten($dropdown-link-hover-bg, 3%);
 // Mixins
 @mixin btn-type($background: $blue, $color: #fff) {
   border-radius: 0.25rem;
-  color: $color;
+  color: $color !important;
   background-color: $background;
   text-transform: none;
   font-weight: 600;
@@ -130,30 +130,30 @@ $input-group-addon-bg: lighten($dropdown-link-hover-bg, 3%);
   line-height: 2.25rem !important;
   border-radius: 4px;
   border: 2px solid $background;
-  color: $background;
+  color: $background !important;
   background-color: transparent;
   text-transform: none;
   font-weight: 600;
   transition: 0.25s ease-in-out !important;
   &:hover {
-    color: text($background);
+    color: text($background) !important;
     background-color: darken($background, 5%);
     border-color: darken($background, 5%);
   }
   &:active {
-    color: text($background);
+    color: text($background) !important;
     background-color: darken($background, 10%);
     border-color: darken($background, 10%);
   }
   &:focus {
-    color: text($background);
+    color: text($background) !important;
     background-color: darken($background, 10%);
     border-color: darken($background, 10%);
     box-shadow: 0 0 0 3px transparentize($background, 0.8);
   }
   &:disabled {
     background-color: darken($light, 5%);
-    color: darken($light, 30%);
+    color: darken($light, 30%) !important;
   }
 }
 
@@ -461,6 +461,14 @@ html {
   border-bottom: 1px solid $gray-300;
 }
 
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  border-top: 1px solid $gray-300;
+}
+
 .card-title {
   max-width: 80%;
   margin: 0;
@@ -628,4 +636,19 @@ html {
   object-position: center center;
   border-radius: 4px;
   border: 1px solid $gray-500;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-leave {}
+
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+  opacity: 0;
 }

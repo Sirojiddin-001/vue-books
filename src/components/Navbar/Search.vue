@@ -1,5 +1,5 @@
 <template>
-  <fragment>
+  <div>
     <div v-if="windowWidth >= 1024" class="mr-3">
       <form class="uk-search uk-search-default">
         <a href="#" class="uk-search-icon-flip search-input-icon">
@@ -19,7 +19,7 @@
         <span class="far fa-lg fa-search"></span>
       </div>
     </a>
-  </fragment>
+  </div>
 </template>
 
 <script>

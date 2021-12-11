@@ -1,6 +1,20 @@
 <template>
-  <AuthBlock title="Sign In" button-title="Login" providers :submit-function="signIn">
+  <AuthBlock
+    title="Sign Up"
+    button-title="Register"
+    bg-class="bg-register"
+    providers
+    :submit-function="signUp"
+  >
     <template #form>
+      <Input
+        label="Full name"
+        rules="required|min:3"
+        type="text"
+        placeholder="Enter your full name"
+        v-model="fullName"
+      />
+
       <Input
         label="Email"
         rules="required|email"
@@ -14,13 +28,12 @@
         rules="required|min:8"
         placeholder="Enter password"
         v-model="password"
-        forgot
       />
     </template>
     <template #footer>
       <p class="text-center text-sm">
-        Don't have an account?
-        <router-link class="font-semibold text-blue-600" to="/register">Sign Up</router-link>
+        Already have an account?
+        <router-link class="font-semibold text-blue-600" to="/login">Login</router-link>
       </p>
     </template>
   </AuthBlock>
@@ -40,13 +53,14 @@ export default {
 
   data() {
     return {
+      fullName: "",
       email: "",
       password: ""
     };
   },
 
   methods: {
-    signIn() {
+    signUp() {
       console.log(this.email, this.password);
     }
   }

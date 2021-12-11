@@ -1,12 +1,25 @@
 <template>
   <div class="home">
-    <h1 class="bg-red-500 min-h-full">{{windowWidth}}</h1>
+    <BookSlider :title="$t('new_books')" :books="books" />
+    <BookSlider :title="$t('new_books')" :books="books" />
+    <BookSlider :title="$t('new_books')" :books="books" />
+    <BookSlider :title="$t('new_books')" :books="books" />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
+import BookSlider from "../components/Sliders/BookSlider.vue";
+import books from "../components/Sliders/books";
+
 export default {
-  name: "Home"
+  name: "Home",
+  components: {
+    BookSlider
+  },
+  data() {
+    return {
+      books: books.slice(0, 6)
+    };
+  }
 };
 </script>
