@@ -1,31 +1,60 @@
 <template>
-  <div v-show="windowWidth <= 1024" id="vertical-menu" uk-offcanvas="overlay: true">
+  <div
+    v-show="windowWidth <= 1024"
+    id="vertical-menu"
+    uk-offcanvas="overlay: true"
+  >
     <div class="uk-offcanvas-bar">
       <div v-if="isAuth" class="flex flex-nowrap">
         <div>
-          <Avatar backgroundColor="#0058ff" color="#fff" :size="50" username="Sirojiddin R" />
+          <Avatar
+            backgroundColor="#0058ff"
+            color="#fff"
+            :size="50"
+            username="Sirojiddin R"
+          />
         </div>
         <div class="uk-width-1-1 ml-3 mt-1 mb-3 profile-info">
-          <p class="m-0 p-0 font-semibold uk-text-truncate">Sirojiddin Rixsiboyev</p>
-          <p class="m-0 p-0 uk-text-small uk-text-truncate">rixsiboev001@gmail.com</p>
+          <p class="m-0 p-0 font-semibold uk-text-truncate">
+            Sirojiddin Rixsiboyev
+          </p>
+          <p class="m-0 p-0 uk-text-small uk-text-truncate">
+            rixsiboev001@gmail.com
+          </p>
         </div>
       </div>
 
-      <button v-else class="uk-button w-full book-primary-btn mr-3">Войти</button>
+      <button v-else class="uk-button w-full book-primary-btn mr-3">
+        Войти
+      </button>
 
       <div>
         <ul class="mt-4 uk-nav-default uk-nav-parent-icon" data-uk-nav>
           <li class="uk-active uk-parent uk-open">
-            <a href="#1">Parent</a>
+            <a href="#1">{{ $t("books") }}</a>
             <ul class="uk-nav-sub">
               <li>
-                <a href="#2">Sub item</a>
+                <router-link to="/book-category/1">Category 1</router-link>
               </li>
               <li>
-                <a href="#3">Sub item</a>
+                <router-link to="/book-category/1">Category 1</router-link>
               </li>
               <li>
-                <a href="#4">Sub item</a>
+                <router-link to="/book-category/1">Category 1</router-link>
+              </li>
+            </ul>
+          </li>
+          <li class="uk-active uk-parent">
+            <a href="#1">{{ $t("audio_books") }}</a>
+            <ul class="uk-nav-sub">
+              <li>
+                <router-link to="/book-category/1">Category 1</router-link>
+              </li>
+              <li>
+                <router-link to="/book-category/1">Category 1</router-link>
+              </li>
+              <li>
+                <router-link to="/book-category/1">Category 1</router-link>
               </li>
             </ul>
           </li>
@@ -40,16 +69,15 @@ import Avatar from "vue-avatar";
 
 export default {
   components: {
-    Avatar
+    Avatar,
   },
 
   data() {
     return {
-      isAuth: false
+      isAuth: false,
     };
-  }
+  },
 };
 </script>
 
-<style>
-</style>
+<style></style>

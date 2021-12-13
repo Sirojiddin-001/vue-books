@@ -11,8 +11,8 @@
       </div>
     </div>
     <div class="book-footer bottom-0">
-      <div class="container">
-        <p>2021 Book.uz || BrandName Ltd.</p>
+      <div class="container mx-auto">
+        <p class="text-center">2021 Book.uz || BrandName Ltd.</p>
       </div>
     </div>
   </div>
