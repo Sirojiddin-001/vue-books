@@ -1,23 +1,29 @@
 <template>
-  <AuthBlock title="Reset Password" button-title="Continue" bg-class="bg-forgot" :submit-function="forgotPassword">
+  <AuthBlock
+    :title="$t('reset_password')"
+    :button-title="$t('continue')"
+    bg-class="bg-forgot"
+    :submit-function="forgotPassword"
+  >
     <template #header>
       <p class="uk-margin">
-        Enter the email address associated with your account.
+        {{ $t("email_your_account") }}
       </p>
     </template>
     <template #form>
       <Input
-        label="Email"
+        :label="$t('email')"
         rules="required|email"
         type="email"
-        placeholder="Enter your email"
+        :placeholder="$t('enter_your_email')"
         v-model="email"
       />
     </template>
     <template #footer>
       <p class="text-center text-sm mt-6">
-        Back to   
-        <router-link class="font-semibold text-blue-600" to="/login">Login</router-link>
+        <router-link class="font-semibold text-blue-600" to="/login">
+          {{ $t("back_to_login") }}
+        </router-link>
       </p>
     </template>
   </AuthBlock>
@@ -42,7 +48,7 @@ export default {
   methods: {
     forgotPassword() {
       console.log(this.email);
-    }
-  }
+    },
+  },
 };
 </script>

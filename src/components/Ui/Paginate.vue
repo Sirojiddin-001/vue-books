@@ -1,5 +1,5 @@
 <template>
-  <div class="relative max-w-6xl mx-auto flex justify-center px-4 sm:px-6">
+  <div class="relative max-w-6xl flex justify-center">
     <ul :class="containerClass" v-if="!noLiSurround">
       <li
         v-if="firstLastButton"

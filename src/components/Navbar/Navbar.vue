@@ -11,7 +11,12 @@
           <span class="far fa-bars"></span>
         </div>
 
-        <router-link v-if="windowWidth >= 768" class="uk-navbar-item logo" to="/">Logo</router-link>
+        <router-link
+          v-if="windowWidth >= 768"
+          class="uk-navbar-item logo"
+          to="/"
+          >Logo</router-link
+        >
       </div>
 
       <div v-if="windowWidth < 768" class="nav-overlay uk-navbar-right">
@@ -29,7 +34,12 @@
       <div class="nav-overlay uk-navbar-left uk-flex-1" hidden>
         <div class="uk-navbar-item uk-width-expand">
           <form class="uk-search uk-search-navbar uk-width-1-1">
-            <input class="uk-search-input" type="search" :placeholder="$t('search')" autofocus />
+            <input
+              class="uk-search-input"
+              type="search"
+              :placeholder="$t('search')"
+              autofocus
+            />
           </form>
         </div>
         <a
@@ -54,16 +64,15 @@ export default {
     Search,
     Language,
     AuthButtons,
-    Profile
+    Profile,
   },
 
   data() {
     return {
-      isAuth: false
+      isAuth: true,
     };
-  }
+  },
 };
 </script>
 
-<style>
-</style>
+<style></style>

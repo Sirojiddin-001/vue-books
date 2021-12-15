@@ -2,20 +2,20 @@
   <div class="uk-card uk-background-default uk-border-rounded border-500">
     <div class="card-header">
       <h4 class="card-title uk-text-truncate">Category 1</h4>
-      <div class="ml-auto flex">
-        <button
-          class="uk-button uk-button-small text-white normal-case bg-blue-600 rounded"
-          href="#"
-          data-uk-slider-item="previous"
-        >
-          <span class="far fa-filter"></span>
-          Filters
-        </button>
-      </div>
+      <!--      <div class="ml-auto flex">-->
+      <!--        <button-->
+      <!--          class="uk-button uk-button-small text-white normal-case bg-blue-600 rounded"-->
+      <!--          href="#"-->
+      <!--          data-uk-slider-item="previous"-->
+      <!--        >-->
+      <!--          <span class="far fa-filter"></span>-->
+      <!--          Filters-->
+      <!--        </button>-->
+      <!--      </div>-->
     </div>
 
     <div
-      class="my-2 card-body uk-child-width-1-2 uk-child-width-1-3@s"
+      class="my-2 card-body uk-child-width-1-2 uk-child-width-1-4@s"
       data-uk-grid
     >
       <div v-for="book in books" :key="book.id">
@@ -29,7 +29,10 @@
       </div>
     </div>
 
-    <div class="card-footer">
+    <div class="card-footer flex justify-between">
+      <p v-if="windowWidth > 640" class="font-semibold text-sm">
+        {{ $t("total") }}: {{ books.length }}
+      </p>
       <Paginate
         v-if="windowWidth > 640"
         :page-count="20"
@@ -38,11 +41,15 @@
         page-link-class="uk-text-decoration-none text-blue-600"
         active-class="active"
       />
-      <div v-else class="flex justify-between w-full">
-        <a class="slider-btn mr-2" href="#" data-uk-slider-item="previous">
+      <div v-else class="flex justify-between items-center w-full">
+        <a class="slider-btn mr-2" href="#prev" data-uk-slider-item="previous">
           <span class="far fa-arrow-left"></span>
         </a>
-        <a class="slider-btn" href="#" data-uk-slider-item="next">
+        <p class="font-semibold text-sm">
+          {{ $t("total") }}: {{ books.length }}
+        </p>
+
+        <a class="slider-btn" href="#next" data-uk-slider-item="next">
           <span class="far fa-arrow-right"></span>
         </a>
       </div>
@@ -63,7 +70,7 @@ export default {
 
   data() {
     return {
-      books: books.slice(0, 30),
+      books: books.slice(0, 28),
     };
   },
 };

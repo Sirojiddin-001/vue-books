@@ -1,48 +1,57 @@
 <template>
   <div>
-    <div v-if="getBook" class="uk-card uk-background-default uk-border-rounded border-500 mb-4">
+    <div
+      v-if="getBook"
+      class="uk-card uk-background-default uk-border-rounded border-500 mb-4"
+    >
       <div class="card-header">
-        <h4 class="card-title-details">{{getBook.name}}</h4>
+        <h4 class="card-title-details">{{ getBook.name }}</h4>
       </div>
       <div class="my-2 card-body uk-grid">
         <div class="uk-width-1-3@s">
-          <img class="book-details-img" :src="`https://new.book.ru${getBook.cover}`" alt />
+          <img
+            class="book-details-img"
+            :src="`https://new.book.ru${getBook.cover}`"
+            alt
+          />
 
           <button class="mt-3 uk-width-1-1 uk-button book-primary-btn">
-            <i class="mr-2 far fa-lg fa-eye"></i>
-            View
-          </button>
-          <button class="mt-3 uk-width-1-1 uk-button book-danger-btn">
-            <i class="mr-2 far fa-lg fa-heart"></i>
-            Save
+            <i class="mr-2 far fa-lg fa-bookmark"></i>
+            {{ $t("save") }}
           </button>
           <button class="mt-3 uk-width-1-1 uk-button book-success-btn">
             <i class="mr-2 far fa-lg fa-download"></i>
-            Download
+            {{ $t("download") }}
           </button>
         </div>
 
         <div class="uk-width-2-3@s mt-4 sm:mt-0">
           <div class="p-3 border-500 uk-border-rounded uk-text-small">
             <div class="mb-2">
-              <span class="flex flex-col font-semibold">Author</span>
-              <span>{{getBook.author}}</span>
+              <span class="flex flex-col font-semibold">
+                {{ $t("author") }}
+              </span>
+              <span>{{ getBook.author }}</span>
             </div>
 
             <div class="mb-2">
-              <span class="flex flex-col font-semibold">Year</span>
-              <span>{{getBook.year}}</span>
+              <span class="flex flex-col font-semibold"> {{ $t("year") }}</span>
+              <span>{{ getBook.year }}</span>
             </div>
 
             <div class="mb-2">
-              <span class="flex flex-col font-semibold">Public name</span>
-              <span>{{getBook.pub_name}}</span>
+              <span class="flex flex-col font-semibold">
+                {{ $t("public_name") }}
+              </span>
+              <span>{{ getBook.pub_name }}</span>
             </div>
           </div>
           <div class="mt-4 mb-2">
             <ul data-uk-accordion class="category-list">
               <li>
-                <a class="uk-accordion-title" href="#books">Description</a>
+                <a class="uk-accordion-title" href="#description">
+                  {{ $t("description") }}
+                </a>
                 <div class="uk-accordion-content p-3 uk-text-small">
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                   Accusantium debitis omnis dignissimos labore error? Pariatur
@@ -74,33 +83,32 @@ import BookSlider from "../components/Sliders/BookSlider.vue";
 
 export default {
   components: {
-    BookSlider
+    BookSlider,
   },
 
   data() {
     return {
       bookId: 0,
-      books: books.slice(0, 6)
+      books: books.slice(0, 6),
     };
   },
 
   computed: {
     getBook() {
-      return books.filter(book => book.id === this.bookId)[0];
-    }
+      return books.filter((book) => book.id === this.bookId)[0];
+    },
   },
 
   watch: {
     "$route.params": {
-      handler: function() {
+      handler: function () {
         this.bookId = +this.$route.params.id;
       },
       deep: true,
-      immediate: true
-    }
-  }
+      immediate: true,
+    },
+  },
 };
 </script>
 
-<style>
-</style>
+<style></style>

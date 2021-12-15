@@ -1,39 +1,41 @@
 <template>
   <AuthBlock
-    title="Sign Up"
-    button-title="Register"
+    :title="$t('sign_up')"
+    :button-title="$t('sign_up')"
     bg-class="bg-register"
     providers
     :submit-function="signUp"
   >
     <template #form>
       <Input
-        label="Full name"
+        :label="$t('full_name')"
         rules="required|min:3"
         type="text"
-        placeholder="Enter your full name"
+        :placeholder="$t('enter_your_full_name')"
         v-model="fullName"
       />
 
       <Input
-        label="Email"
+        :label="$t('email')"
         rules="required|email"
         type="email"
-        placeholder="Enter your email"
+        :placeholder="$t('enter_your_email')"
         v-model="email"
       />
 
       <PasswordInput
-        label="Password"
+        :label="$t('password')"
         rules="required|min:8"
-        placeholder="Enter password"
+        :placeholder="$t('enter_password')"
         v-model="password"
       />
     </template>
     <template #footer>
       <p class="text-center text-sm">
-        Already have an account?
-        <router-link class="font-semibold text-blue-600" to="/login">Login</router-link>
+        {{ $t("already_have_an_account") }}
+        <router-link class="font-semibold text-blue-600" to="/login">
+          {{ $t("sign_in") }}
+        </router-link>
       </p>
     </template>
   </AuthBlock>
@@ -48,21 +50,21 @@ export default {
   components: {
     AuthBlock,
     Input,
-    PasswordInput
+    PasswordInput,
   },
 
   data() {
     return {
       fullName: "",
       email: "",
-      password: ""
+      password: "",
     };
   },
 
   methods: {
     signUp() {
       console.log(this.email, this.password);
-    }
-  }
+    },
+  },
 };
 </script>

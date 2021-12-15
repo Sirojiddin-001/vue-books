@@ -8,17 +8,19 @@
       uk-dropdown="mode: click; boundary: .language"
     >
       <ul class="uk-nav uk-dropdown-nav language-select">
-        <li class="uk-nav-header text-center font-semibold normal-case">{{$t("choose_language")}}</li>
+        <li class="uk-nav-header text-center font-semibold normal-case">
+          {{ $t("choose_language") }}
+        </li>
         <li class="uk-nav-divider"></li>
         <li
           :key="language.path"
-          :class="{active: $i18n.locale === language.path}"
+          :class="{ active: $i18n.locale === language.path }"
           v-for="language in languages"
           @click="changeLocale(language.path)"
         >
           <a :href="`#${language.path}`">
             <img :src="require(`@/assets/img/${language.path}.svg`)" />
-            <span>{{language.name}}</span>
+            <span>{{ language.name }}</span>
           </a>
         </li>
       </ul>
@@ -33,22 +35,22 @@ export default {
       languages: [
         {
           name: "UZ",
-          path: "uz"
+          path: "uz",
         },
         {
           name: "RU",
-          path: "ru"
-        }
-      ]
+          path: "ru",
+        },
+      ],
     };
   },
   methods: {
     changeLocale(locale) {
       this.$i18n.locale = locale;
-    }
-  }
+      localStorage.setItem("lang", locale);
+    },
+  },
 };
 </script>
 
-<style>
-</style>
+<style></style>

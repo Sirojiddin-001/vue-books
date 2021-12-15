@@ -1,27 +1,47 @@
 <template>
-  <ValidationProvider tag="div" class="uk-margin" :name="label" :rules="rules" v-slot="{ errors }">
+  <ValidationProvider
+    tag="div"
+    class="uk-margin"
+    :name="label"
+    :rules="rules"
+    v-slot="{ errors }"
+  >
     <div class="flex justify-between mb-1">
-      <label class="uk-form-label font-semibold" for="password">{{label}}</label>
-      <router-link v-if="forgot" class="uk-form-label text-blue-600 font-semibold" to="/forgot-password">Forgot password?</router-link>
+      <label class="uk-form-label font-semibold" for="password">
+        {{ label }}
+      </label>
+      <router-link
+        v-if="forgot"
+        class="uk-form-label text-blue-600 font-semibold"
+        to="/forgot-password"
+        >{{ $t("forgot_password") }}
+      </router-link>
     </div>
 
     <div class="uk-inline w-full">
-      <a href="#" class="uk-form-icon uk-form-icon-flip book-form-icon" @click="view = !view">
+      <a
+        href="#"
+        class="uk-form-icon uk-form-icon-flip book-form-icon"
+        @click="view = !view"
+      >
         <i
           class="fa"
-          :class="[view ? 'fa-eye-slash' : 'fa-eye', errors.length > 0 ? 'text-red-500' : 'text-blue-600']"
+          :class="[
+            view ? 'fa-eye-slash' : 'fa-eye',
+            errors.length > 0 ? 'text-red-500' : 'text-blue-600',
+          ]"
         />
       </a>
       <input
         class="uk-input book-input"
-        :class="{'uk-form-danger': errors.length > 0}"
+        :class="{ 'uk-form-danger': errors.length > 0 }"
         :type="view ? 'text' : 'password'"
         :placeholder="placeholder"
         :value="value"
         @input="onInput"
       />
     </div>
-    <span class="text-red-500 text-sm">{{errors[0]}}</span>
+    <span class="text-red-500 text-sm">{{ errors[0] }}</span>
   </ValidationProvider>
 </template>
 
@@ -33,13 +53,13 @@ extend("email", email);
 extend("min", min);
 extend("required", {
   ...required,
-  message: "This field is required"
+  message: "This field is required",
 });
 
 export default {
   model: {
     prop: "value",
-    event: "input"
+    event: "input",
   },
 
   props: {
@@ -49,33 +69,33 @@ export default {
 
     rules: {
       type: String,
-      default: "required"
+      default: "required",
     },
 
     type: {
       type: String,
-      default: "text"
+      default: "text",
     },
 
     placeholder: String,
 
-    value: String
+    value: String,
   },
 
   components: {
-    ValidationProvider
+    ValidationProvider,
   },
 
   data() {
     return {
-      view: false
+      view: false,
     };
   },
 
   methods: {
     onInput(e) {
       this.$emit("input", e.target.value);
-    }
-  }
+    },
+  },
 };
 </script>
