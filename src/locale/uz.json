@@ -27,5 +27,7 @@
   "continue": "Davom etish",
   "back_to_login": "Kirish sahifasiga qaytish",
   "saved": "Saqlanganlar",
-  "logout": "Tizimdan chiqish"
+  "logout": "Tizimdan chiqish",
+  "search_result": "Qidiruv natijalari",
+  "nothing_found": "Hech narsa topilmadi"
 }

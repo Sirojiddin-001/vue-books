@@ -1,11 +1,17 @@
 <template>
   <div>
     <div v-if="windowWidth >= 1024" class="mr-3">
-      <form class="uk-search uk-search-default">
+      <form @submit.prevent="" class="uk-search uk-search-default">
         <a href="#" class="uk-search-icon-flip search-input-icon">
           <i class="icon far fa-search"></i>
         </a>
-        <input class="book-input uk-search-input" type="search" :placeholder="$t('search')" />
+        <input
+          class="book-input uk-search-input"
+          v-model="search"
+          @change="toResultPage"
+          type="search"
+          :placeholder="$t('search')"
+        />
       </form>
     </div>
 
@@ -24,9 +30,19 @@
 
 <script>
 export default {
-  name: "NavbarSearch"
+  name: "NavbarSearch",
+  data() {
+    return {
+      search: "",
+    };
+  },
+
+  methods: {
+    toResultPage() {
+      this.$router.push({ path: `/search/${this.search}` });
+    },
+  },
 };
 </script>
 
-<style>
-</style>
+<style></style>

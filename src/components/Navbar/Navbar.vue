@@ -33,12 +33,17 @@
 
       <div class="nav-overlay uk-navbar-left uk-flex-1" hidden>
         <div class="uk-navbar-item uk-width-expand">
-          <form class="uk-search uk-search-navbar uk-width-1-1">
+          <form
+            @submit.prevent=""
+            class="uk-search uk-search-navbar uk-width-1-1"
+          >
             <input
               class="uk-search-input"
               type="search"
               :placeholder="$t('search')"
               autofocus
+              v-model="search"
+              @change="toResultPage"
             />
           </form>
         </div>
@@ -70,7 +75,14 @@ export default {
   data() {
     return {
       isAuth: true,
+      search: "",
     };
+  },
+
+  methods: {
+    toResultPage() {
+      this.$router.push({ path: `/search/${this.search}` });
+    },
   },
 };
 </script>

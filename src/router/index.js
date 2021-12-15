@@ -44,6 +44,11 @@ const routes = [
     name: "BookCategory",
     component: () => import("../views/BookCategory.vue"),
   },
+  {
+    path: "/search/:string",
+    name: "SearchResult",
+    component: () => import("../views/SearchResult.vue"),
+  },
 ];
 
 const router = new VueRouter({
